@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "causalgen"
+version = "0.1.0"
+description = "Configurable synthetic causal datasets with custom mechanisms and noise"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+dependencies = ["numpy>=1.23", "pandas>=1.5", "networkx>=3.0", "matplotlib>=3.6"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7", "build>=1"]
+
+[project.scripts]
+causalgen = "causalgen.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
