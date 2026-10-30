@@ -1,7 +1,13 @@
 # causalgen
 
 Generate synthetic causal datasets with configurable graphs, mechanisms, noise,
-confounders, interventions and multiple environments.
+confounders, interventions and multiple environments. Use it to benchmark causal
+discovery methods or explore causal models with known ground truth. Results
+include observation tables, graph structure and metadata that can be exported
+for use in your own analysis.
+
+Start with the [quick start](#start-with-a-dataset), then explore the
+[examples](#examples) for complete, runnable workflows.
 
 ## Install
 
@@ -11,7 +17,6 @@ From a checkout of this repository:
 python -m pip install .
 ```
 
-For development: `python -m pip install -e ".[dev]"`.
 Requires Python 3.10 or later. This version has not yet been published to PyPI.
 
 ## Start with a dataset
@@ -303,7 +308,17 @@ Each dataset is saved to a separate folder under `example_output/`, with CSV
 data, adjacency, edge lists and JSON metadata. Edit the configurations in the
 script to change sample counts, mechanisms, noise or graph parameters.
 
-## Development
+## License
+
+CausalGen is distributed under the [MIT license](LICENSE).
+
+## Contributing and development
+
+To work on the package, install the development dependencies from the repository root:
+
+```bash
+python -m pip install -e ".[dev]"
+```
 
 Code is organized into `config`, `graphs`, `mechanisms`, `sampling`,
 `generation`, `dataset` and `cli`. Import public objects directly from `causalgen`.
